@@ -33,5 +33,5 @@ In any file::
 Alternatives
 ----------------------------------------------------------------------
 
-I have seen an extension ``sphinxcontrib-proof`` which seems much
-better designed, I suggest you give it a try.
+There exist an extension `sphinxcontrib-proof <https://framagit.org/spalax/sphinxcontrib-proof>`_
+which seems much better designed. I suggest you give it a try.
