@@ -135,10 +135,13 @@ def register_mathenv(app, config):
 
 filename_css = 'mathenv.css'
 def setup_static_path(app):
+    from tempfile import mkdtemp
     app._mathenv_static_path = mkdtemp()
     if app._mathenv_static_path not in app.config.html_static_path:
         app.config.html_static_path.append(app._mathenv_static_path)
 
+import os
+from sphinx.util.osutil import copyfile
 def copy_contrib_file(app, file_name):
     pwd = os.path.abspath(os.path.dirname(__file__))
     source = os.path.join(pwd, file_name)
