@@ -1,0 +1,63 @@
+.admonition p {
+  padding-left: 8px;
+}
+.admonition-title {
+  background: none;
+  margin: 0px !important; 
+  padding: 0px;
+}
+.mathenv-theorem, .mathenv-proposition {
+  border: solid 2px #6ab0de;
+}
+.mathenv-definition {
+  border: solid 1px #6ab0de;
+}
+.mathenv-example, .mathenv-proof {
+  border-left: solid 2px gray;
+}
+.mathenv-example .admonition-title,
+.mathenv-proof .admonition-title,
+.mathenv-remark .admonition-title {
+  background: none;
+  color: #555;
+  margin: 0px;
+  padding: 1px;
+}
+/* https://fortawesome.github.io/Font-Awesome/cheatsheet/ */
+/* enter with ^v+u+hex code in vi */
+.mathenv-definition .admonition-title::before {
+  content: "";
+}
+.mathenv-theorem .admonition-title::before {
+  /* content: "&#xf19d;"; */
+  /* content: ""; */
+  content: "";
+}
+.mathenv-proposition .admonition-title::before {
+  content: "";
+}
+.mathenv-example .admonition-title::before {
+  content: "";
+}
+.mathenv-proof .admonition-title::before {
+  /* content: "&#xf212;"; */
+  /*content: "";*/
+  content: "";
+}
+.mathenv-proof {
+  margin-left: 20px;
+  font-size: 80%;
+}
+.mathenv-remark {
+  font-size: 80%;
+}
+
+/* + override defaults (font too large) */
+
+body { font-size: 15px; }
+div.body h1 { font-size: 180%; }
+div.body h2 { font-size: 130%; }
+div.body h3 { font-size: 120%; }
+div.body h4 { font-size: 110%; }
+div.body h5 { font-size: 105%; }
+div.body h6 { font-size: 100%; }
