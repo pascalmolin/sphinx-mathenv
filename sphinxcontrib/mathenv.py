@@ -161,6 +161,8 @@ def builder_inited(app):
 
 def setup(app):
 
+  app.connect("builder-inited", builder_inited)
+
   app.add_config_value("mathenv_environments", mathenv_environments, "env")
   app.add_config_value("mathenv_nonumber", mathenv_nonumber, "env")
   app.connect("config-inited", register_mathenv)
