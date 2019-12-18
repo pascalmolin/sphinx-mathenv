@@ -9,8 +9,11 @@
 .mathenv-theorem, .mathenv-proposition {
   border: solid 2px #6ab0de;
 }
-.mathenv-definition {
+.mathenv-corollary, .mathenv-lemma {
   border: solid 1px #6ab0de;
+}
+.mathenv-definition {
+  border: solid 1px #4693b5;
 }
 .mathenv-example, .mathenv-proof {
   border-left: solid 2px gray;
