@@ -151,8 +151,10 @@ def copy_contrib_file(app, file_name):
 def builder_inited(app):
 
     # Sphinx 1.8 renamed `add_stylesheet` to `add_css_file`
-    add_css = getattr(app, 'add_css_file', getattr(app, 'add_stylesheet'))
-    add_js = getattr(app, 'add_js_file', getattr(app, 'add_javascript'))
+    # and `add_javascript` to `add_js_file`.
+    # Sphinx 4.0 finally removed `add_stylesheet` and `add_javascript`.
+    old_css_add = getattr(app, 'add_stylesheet', None)
+    add_css = getattr(app, 'add_css_file', old_css_add)
 
     # Ensure the static path is setup
     setup_static_path(app)
@@ -160,7 +162,6 @@ def builder_inited(app):
     # custom js and CSS
     copy_contrib_file(app, filename_css)
     add_css(filename_css)
-
 
 def setup(app):
 
@@ -170,7 +171,7 @@ def setup(app):
   app.add_config_value("mathenv_nonumber", mathenv_nonumber, "env")
   app.connect("config-inited", register_mathenv)
 
-  app.add_stylesheet('mathenv.css')
+  app.add_css_file('mathenv.css')
   #app.connect('doctree-read', register_mathenv_labels)
 
 """
